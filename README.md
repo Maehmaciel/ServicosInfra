@@ -5,14 +5,13 @@
 
 1. Primeiro, atualizamos os pacotes do linux
 
- 	`sudo apt update`
+`sudo apt update`
 
 2. Agora, baixamos o apache
 
 `sudo apt install apache2`
 
 3. Abra o navegador e digite "localhost" na barra de pesquisa. Se aparecer uma pagina web com informaçoes sobre o apache, a instalação ocorreu como o esperado.
-
 
 4. Dentro da pasta /var/www/html crie uma pasta com o nome do seu projeto 
 
