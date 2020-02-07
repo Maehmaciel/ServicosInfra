@@ -24,7 +24,7 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 > Ex:localhost/projeto/home.html
 
 -------------------------------------------------------------------------------------------------------------
-###Comandos
+### Comandos
 ```
 /etc/init.d/apache reload (Recarregar o servidor)
 /etc/init.d/apache reload (Para o servidor)
@@ -33,8 +33,8 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 ```
 ------------------------------------------------------------------------------------------------------------
 
-###Arquivos de Configuração
-####Pastas importantes
+### Arquivos de Configuração
+#### Pastas importantes
 /etc/apache2 –Pasta com arquivos de configuração
 /var/www/html–Pasta Raiz do Site default
 
