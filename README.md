@@ -35,12 +35,12 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 
 ### Arquivos de Configuração
 #### Pastas importantes
-/etc/apache2 –Pasta com arquivos de configuração
-/var/www/html–Pasta Raiz do Site default
+- /etc/apache2 –Pasta com arquivos de configuração
+- /var/www/html–Pasta Raiz do Site default
 
 
-/etc/apache2/apache2.conf (Arquivo de configuração principal)
-/etc/apache2/ports.conf (Arquivo de configuração da porta do serviço, Porta 80 (http) e 443(https) são as padrões)
+- /etc/apache2/apache2.conf (Arquivo de configuração principal)
+- /etc/apache2/ports.conf (Arquivo de configuração da porta do serviço, Porta 80 (http) e 443(https) são as padrões)
 
  
 
