@@ -57,26 +57,30 @@ criar (ou inserir os arquivos)
 
 
 2. dar permissoes (alterar usuario e grupo)
-`sudo chown -R $USER:$USER /var/www/meuprojeto/`
-`sudo chmod -R 777 /var/www/meuprojeto/`
+
+```sudo chown -R $USER:$USER /var/www/meuprojeto/
+sudo chmod -R 777 /var/www/meuprojeto/
+```
 
 
 
 3. config host virtual
-- crie o arquivo com o nome da sua pasta em /var/www
+- Crie o arquivo com o nome da sua pasta em /var/www;
 
 `sudo touch /etc/apache2/sites-available/meuprojeto.conf` 
 
 
-adicione ao final do arquivo /etc/hosts a seguinte linha:
+- Adicione ao final do arquivo /etc/hosts a seguinte linha:
 
 `127.0.0.2       meuprojeto.com`
 
 com isso, seu navegador irá entender que ao acessar 127.0.0.2, deve redirecionar para a pasta /var/www/meuprojeto
 
--volte ao arquivo 
-/etc/apache2/sites-available/
-e insira no arquivo de configuracao, criado anteriormente (meuprojeto.conf) as seguintes linhas, de acordo com o dominio que voce inseriu em /etc/hosts
+- Volte ao arquivo 
+/etc/apache2/sites-available/meuprojeto.conf
+
+
+e insira no arquivo de configuracao, as seguintes linhas, de acordo com o dominio que voce inseriu em /etc/hosts
 
 ```
 <VirtualHost *:80>
@@ -89,12 +93,12 @@ e insira no arquivo de configuracao, criado anteriormente (meuprojeto.conf) as s
 </VirtualHost>
 ```
 
-habilite seu host
+- Habilite seu host
 
 `
 sudo a2ensite meuprojeto.conf
 `
-por fim, reinicie o apache
+- Por fim, reinicie o apache
 
 `systemctl reload apache2`
 
