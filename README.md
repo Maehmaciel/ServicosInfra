@@ -42,5 +42,64 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 - /etc/apache2/apache2.conf (Arquivo de configuração principal)
 - /etc/apache2/ports.conf (Arquivo de configuração da porta do serviço, Porta 80 (http) e 443(https) são as padrões)
 
+
+-------------------------------------------------------------------------------------------------------------------
+
+## Hosts Virtuais com apache
+
+
+1. criar diretorios do projeto
+`sudo mkdir /var/www/meuprojeto`
+
+
+criar (ou inserir os arquivos)
+`sudo pico /var/www/meuprojeto/index.html` (Seu arquivo html)
+
+
+2. dar permissoes (alterar usuario e grupo)
+`sudo chown -R $USER:$USER /var/www/meuprojeto/`
+`sudo chmod -R 777 /var/www/meuprojeto/`
+
+
+
+3. config host virtual
+- crie o arquivo com o nome da sua pasta em /var/www
+
+`sudo touch /etc/apache2/sites-available/meuprojeto.conf` 
+
+
+adicione ao final do arquivo /etc/hosts a seguinte linha:
+
+`127.0.0.2       meuprojeto.com`
+
+com isso, seu navegador irá entender que ao acessar 127.0.0.2, deve redirecionar para a pasta /var/www/meuprojeto
+
+-volte ao arquivo 
+/etc/apache2/sites-available/
+e insira no arquivo de configuracao, criado anteriormente (meuprojeto.conf) as seguintes linhas, de acordo com o dominio que voce inseriu em /etc/hosts
+
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName meuprojeto.com
+    ServerAlias meuprojeto.com
+    DocumentRoot /var/www/meuprojeto
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+habilite seu host
+
+`
+sudo a2ensite meuprojeto.conf
+`
+por fim, reinicie o apache
+
+`systemctl reload apache2`
+
+
+assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar seus arquivos contidos na pasta /var/www/meuprojeto
+
  
 
