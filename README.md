@@ -60,6 +60,7 @@ criar (ou inserir os arquivos)
 
 ```sudo chown -R $USER:$USER /var/www/meuprojeto/
 sudo chmod -R 777 /var/www/meuprojeto/
+sudo chown -R $USER /var/www/projeto
 ```
 
 
