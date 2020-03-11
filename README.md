@@ -26,7 +26,7 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 -------------------------------------------------------------------------------------------------------------
 ### Comandos
 ```
-/etc/init.d/apache reload (Recarregar o servidor)
+/etc/init.d/apache reload (Reiniciar o servidor)
 /etc/init.d/apache reload (Para o servidor)
 /etc/init.d/apache start (Inicia o servidor)
 
@@ -41,6 +41,26 @@ Caso tenha esquecido de alterar o nome da pagina inicial para index.html, voce p
 
 - /etc/apache2/apache2.conf (Arquivo de configuração principal)
 - /etc/apache2/ports.conf (Arquivo de configuração da porta do serviço, Porta 80 (http) e 443(https) são as padrões)
+
+#### Mudando a porta do apache
+(aqui estamos alterando a porta do apache de 80 para 3000)
+- entre em /etc/apache2/ports.conf e altere a linha "Listen 80" para:
+```
+Listen 3000
+
+```
+
+- entre em /etc/apache2/sites-enabled/000-default.conf  e altere:
+```
+<VirtualHost *:3000>
+```
+e tambem altere 
+```
+DocumentRoot /var/www/
+```
+
+reinicie o serviço
+
 
 
 -------------------------------------------------------------------------------------------------------------------
