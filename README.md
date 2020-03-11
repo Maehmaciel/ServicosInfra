@@ -135,6 +135,39 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 - sudo apt-get update
 - sudo apt-get install nginx
 - sudo /etc/init.d/nginx status
+- sudo mkdir /var/www/meuprojetoNginx
+- sudo chown -R $USER:$USER /var/www/meuprojetoNginx/
+- sudo chmod -R 777 /var/www/meuprojetoNginx/
 
+
+- sudo nano /var/www/meuprojetoNginx/index.html
+
+- insira seu html
+
+- sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/meuprojetonginx.com
+
+- abra o arquivo criado anteriormente e altere a linha root, deve ficar assim:
+```
+ server {
+        listen   80; ## listen for ipv4; this line is default and implied
+        #listen   [::]:80 default ipv6only=on; ## listen for ipv6
+
+        root /var/www/var/www/meuprojetoNginx/;
+        index index.html index.htm;
+
+        # Make site accessible from http://localhost/
+        server_name example.com;
+}
+```
+
+- sudo ln -s /etc/nginx/sites-available/meuprojetonginx.com /etc/nginx/sites-enabled/meuprojetonginx.com
+
+- sudo rm /etc/nginx/sites-enabled/default
+
+- sudo service nginx restart
+
+- sudo pico /etc/hosts
+
+172.0.0.1 www.example.com 
  
 
