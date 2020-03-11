@@ -126,5 +126,12 @@ sudo a2ensite meuprojeto.conf
 
 assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar seus arquivos contidos na pasta /var/www/meuprojeto
 
+
+## Nginx
+
+- sudo apt-get update
+- sudo apt-get install nginx
+- sudo /etc/init.d/nginx status
+
  
 
