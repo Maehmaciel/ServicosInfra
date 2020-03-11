@@ -78,9 +78,9 @@ criar (ou inserir os arquivos)
 
 2. dar permissoes (alterar usuario e grupo)
 
-```sudo chown -R $USER:$USER /var/www/meuprojeto/
+```
+sudo chown -R $USER:$USER /var/www/meuprojeto/
 sudo chmod -R 777 /var/www/meuprojeto/
-sudo chown -R $USER /var/www/projeto
 ```
 
 
@@ -91,12 +91,6 @@ sudo chown -R $USER /var/www/projeto
 `sudo touch /etc/apache2/sites-available/meuprojeto.conf` 
 
 
-- Adicione ao final do arquivo /etc/hosts a seguinte linha:
-
-`127.0.0.2       meuprojeto.com`
-
-com isso, seu navegador irá entender que ao acessar 127.0.0.2, deve redirecionar para a pasta /var/www/meuprojeto
-
 - Volte ao arquivo 
 /etc/apache2/sites-available/meuprojeto.conf
 
@@ -104,7 +98,7 @@ com isso, seu navegador irá entender que ao acessar 127.0.0.2, deve redireciona
 e insira no arquivo de configuracao, as seguintes linhas, de acordo com o dominio que voce inseriu em /etc/hosts
 
 ```
-<VirtualHost *:80>
+<VirtualHost *:3000>
     ServerAdmin webmaster@localhost
     ServerName meuprojeto.com
     ServerAlias meuprojeto.com
@@ -113,6 +107,15 @@ e insira no arquivo de configuracao, as seguintes linhas, de acordo com o domini
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+
+obs : Colocamos a porta 3000 aqui pois alteramos a porta padrao do apache para 3000, anteriormente
+
+
+- Adicione ao final do arquivo /etc/hosts a seguinte linha:
+
+`127.0.0.2       meuprojeto.com`
+
+com isso, seu navegador irá entender que ao acessar 127.0.0.2:3000 ou meuprojeto.com:3000, deve redirecionar para a pasta /var/www/meuprojeto
 
 - Habilite seu host
 
