@@ -168,6 +168,13 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 
 - sudo pico /etc/hosts
 
-172.0.0.1 www.example.com 
+172.0.0.1 meuprojetonginx.com
+
+
+## LAMP
+
+## Moodle
+
+# Wordpress
  
 
