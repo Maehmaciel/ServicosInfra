@@ -196,7 +196,32 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 `sudo mysql -u root -p`
 
 
-## LAMP
+## Phpmyadmin
+- O banco de dados deve estar já configurado
+
+`sudo apt-get install phpmyadmin `
+
+- Selecione o Apache como servidor
+
+` mysql -u root -p`
+
+- Insira sua senha escolhida durante a instalaçao do mysql
+
+```
+CREATE USER umusuario IDENTIFIED by '<umasenha>';
+GRANT ALL PRIVILEGES ON *.* TO 'umusuario'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+`sudo service apache2 restart`
+
+- linque o phpmyadmin com a pasta do apache 
+
+`sudo ln -s /usr/share/phpmyadmin /var/www/`
+
+- acesse o phpmyadmin http://localhost/phpmyadmin/ com o usuario criado acima
+
 
 ## Moodle
 
