@@ -253,3 +253,7 @@ define('DB_COLLATE', '');
 ```
 
 - acesse http://localhost/wordpress no seu navegador para verificar se o Wordpress está funcionando
+
+- Escolha o idioma e forneça as informaçoes requeridas
+
+- Instale o wordpress
