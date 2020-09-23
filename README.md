@@ -160,21 +160,33 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 }
 ```
 
-- sudo ln -s /etc/nginx/sites-available/meuprojetonginx.com /etc/nginx/sites-enabled/meuprojetonginx.com
+` sudo ln -s /etc/nginx/sites-available/meuprojetonginx.com /etc/nginx/sites-enabled/meuprojetonginx.com`
 
-- sudo rm /etc/nginx/sites-enabled/default
+` sudo rm /etc/nginx/sites-enabled/default`
 
-- sudo service nginx restart
+` sudo service nginx restart`
 
-- sudo pico /etc/hosts
+`sudo pico /etc/hosts`
 
-172.0.0.1 meuprojetonginx.com
+`172.0.0.1 meuprojetonginx.com`
+
+## Mysql
+- Baixar o pacote do site https://dev.mysql.com/downloads/repo/apt/
+- instalar o pacote sudo
+`dpkg -i mysql-apt-config_0.8.14-1_all.deb`
+`sudo apt update`
+`sudo apt install mysql-server`
+- defina a senha de root
+- selecione Use Strong Password Encryption
+`sudo systemctl start mysql`
+`sudo systemctl enable mysql`
+`sudo apt install mysql-workbench-community`
 
 
 ## LAMP
 
 ## Moodle
 
-# Wordpress
+## Wordpress
  
 
