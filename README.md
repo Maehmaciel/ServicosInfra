@@ -173,8 +173,11 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 ## git 
 
 `sudo apt-get update `
+
 `sudo apt-get install git`
+
 `git config --global user.name "Seu Nome"`
+
 `git config --global user.email "exemplo@seuemail.com.br"`
 
 ---------------------------------------------------------------------------------------------------------
