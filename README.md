@@ -216,15 +216,40 @@ EXIT;
 
 `sudo service apache2 restart`
 
-- linque o phpmyadmin com a pasta do apache 
+- link o phpmyadmin com a pasta do apache 
 
 `sudo ln -s /usr/share/phpmyadmin /var/www/`
 
 - acesse o phpmyadmin http://localhost/phpmyadmin/ com o usuario criado acima
 
+- Crie um banco utf-8 que será nescessário ao configurar o wordpress
 
 ## Moodle
 
 ## Wordpress
- 
+`wget https://wordpress.org/latest.tar.gz`
 
+`tar -zxvf latest.tar.gz`
+
+`sudo mv wordpress/ /var/www/`
+
+`sudo chown www-data.www-data /var/www/wordpress/* -R`
+ 
+`cd /var/www/wordpress/`
+
+`mv wp-config-sample.php wp-config.php`
+
+`sudo pico  wp-config.php`
+
+
+```
+define('DB_NAME', 'seubanco');
+define('DB_USER', 'seuuser');
+define('DB_PASSWORD', 'suasenha');
+define('DB_HOST', 'localhost');
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+
+```
+
+- acesse http://localhost/wordpress no seu navegador para verificar se o Wordpress está funcionando
