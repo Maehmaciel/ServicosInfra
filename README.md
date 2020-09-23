@@ -170,6 +170,16 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 
 - Insira `172.0.0.1 meuprojetonginx.com` 
 
+## git 
+
+`sudo apt-get update `
+`sudo apt-get install git`
+`git config --global user.name "Seu Nome"`
+`git config --global user.email "exemplo@seuemail.com.br"`
+
+---------------------------------------------------------------------------------------------------------
+### Os serviços abaixo form instalados com o Apache configurado para a porta 80, se o seu apache se encontra em outra porta, não se esqueça de informá-la ao acessar o serviço
+
 ## Mysql
 - Baixar o pacote do site https://dev.mysql.com/downloads/repo/apt/
 - instalar o pacote sudo
