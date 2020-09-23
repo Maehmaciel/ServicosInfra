@@ -183,6 +183,23 @@ assim, ao acessar meuprojeto.com em seu navegador, voce sera capaz de vizualizar
 ---------------------------------------------------------------------------------------------------------
 ### Os serviços abaixo form instalados com o Apache configurado para a porta 80, se o seu apache se encontra em outra porta, não se esqueça de informá-la ao acessar o serviço
 
+## PHP 7.4
+
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+```
+
+`sudo apt install php7.4`
+
+`sudo apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y`
+
+`sudo a2enmod php 7.4`
+
+`sudo service apache2 restart`
+
 ## Mysql
 - Baixar o pacote do site https://dev.mysql.com/downloads/repo/apt/
 - instalar o pacote sudo
@@ -243,7 +260,20 @@ EXIT;
 - Copie o arquivo para o diretório /var/www
 - Acesse o diretório 
 - Descompacte o arquivo usando o comando tar xvfz <nomedoarquivo>
-- Acesse http://localhost/moodle/, selecione o idioma e insira as informações requeridas
+- Acesse http://localhost/moodle/, selecione o idioma e prossiga
+- Cria uma pasta chamada moodledata onde "Diretório de dados" está indicando
+- Dê permissoes a pasta 
+
+`sudo chmod 777 moodledata`
+
+- Reinicie o apache
+`/etc/init.d/apache2 restart`
+
+- Recarregue a página do moodle no localhost e prossiga para selecionar MySQL como banco e informar os dados para conexão
+
+- Prossiga para o proximo passo e confira se ha algum erro ou pacote faltando que precise ser instalado ou habilitado
+
+
 
 ## Wordpress
 `wget https://wordpress.org/latest.tar.gz`
