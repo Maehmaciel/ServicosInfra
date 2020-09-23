@@ -226,9 +226,15 @@ EXIT;
 
 ## Moodle
 
+- Faça o download da última versão do moodle em https://download.moodle.org/releases/latest/
+- Copie o arquivo para o diretório /var/www
+- Acesse o diretório 
+- Descompacte o arquivo usando o comando tar xvfz <nomedoarquivo>
+- Acesse http://localhost/moodle/, selecione o idioma e insira as informações requeridas
+
 ## Wordpress
 `wget https://wordpress.org/latest.tar.gz`
-
+ 
 `tar -zxvf latest.tar.gz`
 
 `sudo mv wordpress/ /var/www/`
